@@ -1,0 +1,35 @@
+name: Tagpr
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  tagpr:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions: {}
+    steps:
+      - name: Fetch GitHub App Token
+        uses: actions/create-github-app-token@df432ceedc7162793a195dd1713ff69aefc7379e # v2.0.6
+        id: token
+        with:
+          app-id: ${{ vars.APP_ID_TAGPR }}
+          private-key: ${{ secrets.PRIVATE_KEY_TAGPR }}
+
+      - name: Checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          token: ${{ steps.token.outputs.token }}
+
+      - name: Tagpr
+        id: tagpr
+        uses: tapihdev/actionshub/Songmu/tagpr@main
+        with:
+          github-token: ${{ steps.token.outputs.token }}
+
+      - name: Annotate major and minor tags
+        if: steps.tagpr.outputs.tag != ''
+        uses: tapihdev/tag-major-minor-semver@7b86820b4c4e796f6703c551c55ff8f42e165e3a # v1.0.5
+        with:
+          tag: ${{ steps.tagpr.outputs.tag }}

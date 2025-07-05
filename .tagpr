@@ -1,0 +1,7 @@
+# config file for the tagpr in git config format
+# The tagpr generates the initial configuration, which you can rewrite to suit your environment.
+
+[tagpr]
+    vPrefix = true
+    releaseBranch = main
+    versionFile = -
