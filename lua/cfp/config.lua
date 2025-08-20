@@ -3,10 +3,11 @@ local M = {}
 local defaults = {
   keymaps = {
     copy_path = "<leader>cp",
-    copy_path_line = "<leader>cl",
-    copy_path_url = "<leader>cu",
-    copy_path_hash = "<leader>cw",
-    copy_path_with_hash = "<leader>cW",
+    copy_path_line = "<leader>cP",
+    copy_branch_url = "<leader>cb",
+    copy_branch_url_line = "<leader>cB",
+    copy_hash_url = "<leader>ch",
+    copy_hash_url_line = "<leader>cH",
   },
 }
 

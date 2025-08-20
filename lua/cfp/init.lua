@@ -16,7 +16,7 @@ local function copy_to_clipboard(text)
   vim.notify("Copied to clipboard: " .. text, vim.log.levels.INFO)
 end
 
--- Copy relative path
+-- Copy current file relative path to clipboard
 function M.copy_path()
   local path = get_relative_path()
   if not path then
@@ -27,7 +27,7 @@ function M.copy_path()
   copy_to_clipboard(path)
 end
 
--- Copy relative path with line number
+-- Copy current file relative path with line number to clipboard
 function M.copy_path_line()
   local path = get_relative_path()
   if not path then
@@ -41,8 +41,8 @@ function M.copy_path_line()
   copy_to_clipboard(path_with_line)
 end
 
--- Copy relative path with line number as GitHub URL
-function M.copy_path_url()
+-- Copy current file relative path with line number as GitHub URL with branch name to clipboard
+function M.copy_branch_url_line()
   local path = get_relative_path()
   if not path then
     vim.notify("No file path available", vim.log.levels.WARN)
@@ -81,8 +81,8 @@ function M.copy_path_url()
   copy_to_clipboard(github_file_url)
 end
 
--- Copy relative path with line number as GitHub URL with commit hash
-function M.copy_path_hash()
+-- Copy current file relative path with line number as GitHub URL with commit hash to clipboard
+function M.copy_hash_url_line()
   local path = get_relative_path()
   if not path then
     vim.notify("No file path available", vim.log.levels.WARN)
@@ -119,17 +119,6 @@ function M.copy_path_hash()
   local github_file_url = github_url .. "/blob/" .. commit_hash .. "/" .. path .. "#L" .. line_num
 
   copy_to_clipboard(github_file_url)
-end
-
--- Copy relative path (for <leader>cW)
-function M.copy_path_with_hash()
-  local path = get_relative_path()
-  if not path then
-    vim.notify("No file path available", vim.log.levels.WARN)
-    return
-  end
-
-  copy_to_clipboard(path)
 end
 
 return M
