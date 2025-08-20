@@ -81,5 +81,56 @@ function M.copy_path_url()
   copy_to_clipboard(github_file_url)
 end
 
+-- Copy relative path with line number as GitHub URL with commit hash
+function M.copy_path_hash()
+  local path = get_relative_path()
+  if not path then
+    vim.notify("No file path available", vim.log.levels.WARN)
+    return
+  end
+
+  -- Get Git remote URL
+  local git_remote = vim.fn.system("git config --get remote.origin.url"):gsub("\n", "")
+  if vim.v.shell_error ~= 0 then
+    vim.notify("Not in a Git repository", vim.log.levels.WARN)
+    return
+  end
+
+  -- Convert SSH/HTTPS Git URL to GitHub URL
+  local github_url = git_remote
+  if github_url:match("^git@github.com:") then
+    github_url = github_url:gsub("^git@github.com:", "https://github.com/")
+    github_url = github_url:gsub("%.git$", "")
+  elseif github_url:match("^https://github.com/") then
+    github_url = github_url:gsub("%.git$", "")
+  else
+    vim.notify("Remote origin is not a GitHub repository", vim.log.levels.WARN)
+    return
+  end
+
+  -- Get current commit hash
+  local commit_hash = vim.fn.system("git rev-parse HEAD"):gsub("\n", "")
+  if vim.v.shell_error ~= 0 then
+    vim.notify("Failed to get current commit hash", vim.log.levels.WARN)
+    return
+  end
+
+  local line_num = vim.api.nvim_win_get_cursor(0)[1]
+  local github_file_url = github_url .. "/blob/" .. commit_hash .. "/" .. path .. "#L" .. line_num
+
+  copy_to_clipboard(github_file_url)
+end
+
+-- Copy relative path (for <leader>cW)
+function M.copy_path_with_hash()
+  local path = get_relative_path()
+  if not path then
+    vim.notify("No file path available", vim.log.levels.WARN)
+    return
+  end
+
+  copy_to_clipboard(path)
+end
+
 return M
 
