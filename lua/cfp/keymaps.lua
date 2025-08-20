@@ -24,6 +24,18 @@ M.setup = function()
       desc = "Copy file path as GitHub URL"
     })
   end
+
+  if keymaps.copy_path_hash then
+    vim.keymap.set("n", keymaps.copy_path_hash, cfp.copy_path_hash, {
+      desc = "Copy file path as GitHub URL with commit hash"
+    })
+  end
+
+  if keymaps.copy_path_with_hash then
+    vim.keymap.set("n", keymaps.copy_path_with_hash, cfp.copy_path_with_hash, {
+      desc = "Copy file path"
+    })
+  end
 end
 
 return M

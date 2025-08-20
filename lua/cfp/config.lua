@@ -5,6 +5,8 @@ local defaults = {
     copy_path = "<leader>cp",
     copy_path_line = "<leader>cl",
     copy_path_url = "<leader>cu",
+    copy_path_hash = "<leader>cw",
+    copy_path_with_hash = "<leader>cW",
   },
 }
 
