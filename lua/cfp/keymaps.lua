@@ -9,31 +9,37 @@ M.setup = function()
 
   if keymaps.copy_path then
     vim.keymap.set("n", keymaps.copy_path, cfp.copy_path, {
-      desc = "Copy file path"
+      desc = "Copy current file relative path to clipboard"
     })
   end
 
   if keymaps.copy_path_line then
     vim.keymap.set("n", keymaps.copy_path_line, cfp.copy_path_line, {
-      desc = "Copy file path with line number"
+      desc = "Copy current file relative path with line number to clipboard"
     })
   end
 
-  if keymaps.copy_path_url then
-    vim.keymap.set("n", keymaps.copy_path_url, cfp.copy_path_url, {
-      desc = "Copy file path as GitHub URL"
+  if keymaps.copy_branch_url then
+    vim.keymap.set("n", keymaps.copy_branch_url, cfp.copy_branch_url, {
+      desc = "Copy current file relative path as GitHub URL with branch name to clipboard"
     })
   end
 
-  if keymaps.copy_path_hash then
-    vim.keymap.set("n", keymaps.copy_path_hash, cfp.copy_path_hash, {
-      desc = "Copy file path as GitHub URL with commit hash"
+  if keymaps.copy_branch_url_line then
+    vim.keymap.set("n", keymaps.copy_branch_url_line, cfp.copy_branch_url_line, {
+      desc = "Copy current file relative path with line number as GitHub URL with branch name to clipboard",
     })
   end
 
-  if keymaps.copy_path_with_hash then
-    vim.keymap.set("n", keymaps.copy_path_with_hash, cfp.copy_path_with_hash, {
-      desc = "Copy file path"
+  if keymaps.copy_hash_url then
+    vim.keymap.set("n", keymaps.copy_hash_url, cfp.copy_hash_url, {
+      desc = "Copy current file relative path as GitHub URL with commit hash to clipboard"
+    })
+  end
+
+  if keymaps.copy_hash_url_line then
+    vim.keymap.set("n", keymaps.copy_hash_url_line, cfp.copy_hash_url_line, {
+      desc = "Copy current file relative path with line number as GitHub URL with commit hash to clipboard"
     })
   end
 end
