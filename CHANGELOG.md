@@ -1,5 +1,8 @@
 # Changelog
 
+## [v0.2.0](https://github.com/tapihdev/cfp.nvim/compare/v0.1.1...v0.2.0) - 2025-08-20
+- feat: add more commands by @tapih in https://github.com/tapihdev/cfp.nvim/pull/8
+
 ## [v0.1.1](https://github.com/tapihdev/cfp.nvim/compare/v0.1...v0.1.1) - 2025-08-20
 - feat: copy path with hash by @tapih in https://github.com/tapihdev/cfp.nvim/pull/4
 
