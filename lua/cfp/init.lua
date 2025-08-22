@@ -2,7 +2,7 @@ local M = {}
 
 function M.setup(opts)
   local keymaps = require("cfp.keymaps")
-  local commands = require("cfp.commmands")
+  local commands = require("cfp.commands")
 
   local defaults = {
     keymaps = {
