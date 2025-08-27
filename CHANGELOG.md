@@ -1,5 +1,11 @@
 # Changelog
 
+## [v0.2.2](https://github.com/tapihdev/cfp.nvim/compare/v0.2.1...v0.2.2) - 2025-08-27
+- fix: work with lazy.nvim config=true by @tapih in https://github.com/tapihdev/cfp.nvim/pull/12
+- fix: typo by @tapih in https://github.com/tapihdev/cfp.nvim/pull/14
+- doc: update installation by @tapih in https://github.com/tapihdev/cfp.nvim/pull/15
+- refactor: define commands first by @tapih in https://github.com/tapihdev/cfp.nvim/pull/16
+
 ## [v0.2.1](https://github.com/tapihdev/cfp.nvim/compare/v0.2...v0.2.1) - 2025-08-22
 - fix: export setup in init.lua by @tapih in https://github.com/tapihdev/cfp.nvim/pull/10
 
