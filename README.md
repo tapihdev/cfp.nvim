@@ -23,9 +23,7 @@ A Neovim plugin for easily copying file paths and GitHub URLs to clipboard.
 ```lua
 {
   "tapihdev/cfp.nvim",
-  config = function()
-    require("cfp").setup()
-  end,
+  config = true,
 }
 ```
 
