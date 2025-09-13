@@ -8,6 +8,7 @@ A Neovim plugin for easily copying file paths and GitHub URLs to clipboard.
 - 📍 Copy current file path with line number
 - 🔗 Copy current file path as GitHub URL (with branch or commit hash)
 - 📍 Copy current file path as GitHub URL with line number (with branch or commit hash)
+- 🧭 Visual mode support: line range is included for line-based actions
 - ⚡ Simple and lightweight
 - 🎨 Customizable keymaps
 
@@ -93,6 +94,12 @@ require("cfp").setup({
 | `<leader>cB` | `:CopyBranchURLLine` | Copy file path as GitHub URL with branch and line number |
 | `<leader>ch` | `:CopyHashURL` | Copy file path as GitHub URL with commit hash |
 | `<leader>cH` | `:CopyHashURLLine` | Copy file path as GitHub URL with commit hash and line number |
+
+These keymaps work in both normal and visual modes. In visual mode, the line-based actions (`*Line`) include the selected line range:
+
+- `CopyPathLine`: `path/to/file:10-20`
+- `CopyBranchURLLine`: `https://github.com/owner/repo/blob/main/path/to/file#L10-L20`
+- `CopyHashURLLine`: `https://github.com/owner/repo/blob/<hash>/path/to/file#L10-L20`
 
 ## Example Output
 
