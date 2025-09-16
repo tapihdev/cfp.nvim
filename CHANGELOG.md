@@ -1,5 +1,9 @@
 # Changelog
 
+## [v0.3.0](https://github.com/tapihdev/cfp.nvim/compare/v0.2.2...v0.3.0) - 2025-09-16
+- chore: add Renovate configuration file by @tapih in https://github.com/tapihdev/cfp.nvim/pull/17
+- feat: add visual-mode range support for Line actions by @yumafuu in https://github.com/tapihdev/cfp.nvim/pull/20
+
 ## [v0.2.2](https://github.com/tapihdev/cfp.nvim/compare/v0.2.1...v0.2.2) - 2025-08-27
 - fix: work with lazy.nvim config=true by @tapih in https://github.com/tapihdev/cfp.nvim/pull/12
 - fix: typo by @tapih in https://github.com/tapihdev/cfp.nvim/pull/14
